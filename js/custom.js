@@ -6,6 +6,7 @@
     var hash = this.hash;
     if (hash) {
       event.preventDefault();
+      console.log($(hash).offset())
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 900, function() {
