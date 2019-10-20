@@ -13,7 +13,8 @@
 		// echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('clientes');
-		echo $this->Html->css('font-awesome.min');
+		// echo $this->Html->css('font-awesome.min');
+		echo $this->Html->css('https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 		echo $this->Html->css('style');
 
 		
