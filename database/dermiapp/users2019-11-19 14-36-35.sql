@@ -1,5 +1,20 @@
 USE dermiapp;
 
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `dni` char(8) DEFAULT NULL,
+  `ruc` char(10) DEFAULT NULL,
+  `direccion` varchar(255) DEFAULT NULL,
+  `celular` varchar(9) DEFAULT NULL,
+  `telefono` varchar(9) DEFAULT NULL,
+  `email` varchar(20) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `role` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+
+
 insert into `users`(`id`,`nombre`,`dni`,`ruc`,`direccion`,`celular`,`telefono`,`email`,`password`,`role`) values (3,'Admin','','','','','','admin@gmail.com','$2y$10$mJgCSB.Cx6EEk1D7PBo3ReNkYdxik0.SjUW0jZ7wFNjIYBh4qJFDi','admin');
 insert into `users`(`id`,`nombre`,`dni`,`ruc`,`direccion`,`celular`,`telefono`,`email`,`password`,`role`) values (4,'User','','','','','','user@gmail.com','$2y$10$FILljiFmnZovhkqaWleuzObsyLbxXZ7qpYTbCHoekI0pgcZ9JgpOe','user');
 insert into `users`(`id`,`nombre`,`dni`,`ruc`,`direccion`,`celular`,`telefono`,`email`,`password`,`role`) values (5,'Moncada','','','','','','jahir@gmail.com','$2y$10$BYwXIuAn//qe4PTdIsqAUOcE6MbPnjQzaJ2FONUAEvn/hZkK1X4f6','');

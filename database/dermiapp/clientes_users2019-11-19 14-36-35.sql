@@ -1,5 +1,22 @@
 USE dermiapp;
 
+CREATE TABLE `clientes_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `probbenigno` decimal(8,3) NOT NULL,
+  `probmaligno` decimal(8,3) NOT NULL,
+  `descripcion` varchar(250) DEFAULT NULL,
+  `photo` varchar(250) NOT NULL,
+  `photodir` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_clientes_c_u` (`cliente_id`),
+  KEY `fk_users_c_u` (`user_id`),
+  CONSTRAINT `fk_clientes_c_u` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_users_c_u` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+
 insert into `clientes_users`(`id`,`user_id`,`cliente_id`,`probbenigno`,`probmaligno`,`descripcion`,`photo`,`photodir`) values (2,3,9,25.000,35.980,'','100-0.jpeg','c00adaa7-56da-4d49-8beb-d64bce4dcac8');
 insert into `clientes_users`(`id`,`user_id`,`cliente_id`,`probbenigno`,`probmaligno`,`descripcion`,`photo`,`photodir`) values (3,3,9,36.000,52.000,'','logo.png','bd79d239-03c1-4706-bd4b-9a881bc499a1');
 insert into `clientes_users`(`id`,`user_id`,`cliente_id`,`probbenigno`,`probmaligno`,`descripcion`,`photo`,`photodir`) values (4,3,9,123.000,123.000,'','Captura1.PNG','6b0d12fb-1783-4d1d-bc19-2409ded971a7');

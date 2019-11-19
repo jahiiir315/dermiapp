@@ -1,5 +1,18 @@
 USE dermiapp;
 
+CREATE TABLE `clientes` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombres` varchar(40) DEFAULT NULL,
+  `apellido1` varchar(40) DEFAULT NULL,
+  `apellido2` varchar(40) DEFAULT NULL,
+  `dni` char(8) DEFAULT NULL,
+  `user_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_users_cli` (`user_id`),
+  CONSTRAINT `fk_users_cli` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+
+
 insert into `clientes`(`id`,`nombres`,`apellido1`,`apellido2`,`dni`,`user_id`) values (4,'Jahir','Moncada','Leiva','70606685',3);
 insert into `clientes`(`id`,`nombres`,`apellido1`,`apellido2`,`dni`,`user_id`) values (5,'ARIS JAHIR','Moncada','Leiva','70606685',3);
 insert into `clientes`(`id`,`nombres`,`apellido1`,`apellido2`,`dni`,`user_id`) values (6,'ARIS JAHIR','Moncada','Leiva','70606685',3);
