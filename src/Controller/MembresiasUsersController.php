@@ -47,9 +47,9 @@ class MembresiasUsersController extends AppController
 
         $membresiaActiva = '';
         if($this->Auth->user()['role']==='admin'){
-            $membresiasUsers = $this->paginate($this->MembresiasUsers);
+            $membresiasUsers = $this->MembresiasUsers->find();
         }else{
-            $membresiasUsers = $this->paginate($this->MembresiasUsers->find()->where(['user_id' => $this->Auth->user()['id']]));
+            $membresiasUsers = $this->MembresiasUsers->find()->where(['user_id' => $this->Auth->user()['id']]);
             $membresiasActivas = $this->MembresiasUsers->find()->where(['user_id' => $this->Auth->user()['id']],["estado"=>'activo']);
             foreach($membresiasActivas as $membresia){
                 if($membresia['fecha_inicio']>=$membresia['fecha_fin']){
@@ -138,8 +138,14 @@ class MembresiasUsersController extends AppController
             }
             $this->Flash->error(__('No pudo adquirir esta membresia. Intente de nuevo.', 'Membresias User'));
         }
-        $membresias = $this->MembresiasUsers->Membresias->find('list', ['limit' => 200]);
-        $users = $this->MembresiasUsers->Users->find('list', ['limit' => 200]);
+        $membresias = $this->MembresiasUsers->Membresias->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'nombre'
+        ]);
+        $users = $this->MembresiasUsers->Users->find('list',[
+            'keyField' => 'id',
+            'valueField' => 'email'
+        ]);
         $this->set(compact('membresiasUser', 'membresias', 'users'));
     }
 

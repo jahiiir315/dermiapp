@@ -2,8 +2,12 @@
 <section class="content-header">
   <h1>
     Asesorias médicas
-    <?php if(isset($membresiaActiva['membresia_id'])): ?>
+    <?php if($current_user['role']==='admin'): ?>
       <div class="pull-right"><?php echo $this->Html->link(__('Nueva'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
+    <?php else: ?>
+      <?php if(isset($membresiaActiva['membresia_id'])): ?>
+        <div class="pull-right"><?php echo $this->Html->link(__('Nueva'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
+      <?php endif ?>
     <?php endif ?>
   </h1>
 </section>
@@ -53,9 +57,14 @@
                   <td><?= h($doctoresUser->descripcion) ?></td>
                   <td class="actions text-right">
                       <?= $this->Html->link(__('Ver'), ['action' => 'view', $doctoresUser->id], ['class'=>'btn btn-info btn-xs']) ?>
-                      <?php if(isset($membresiaActiva['membresia_id'])): ?>
+                      <?php if($current_user['role'] ==='admin'): ?>
                         <?= $this->Html->link(__('Editar'), ['action' => 'edit', $doctoresUser->id], ['class'=>'btn btn-warning btn-xs']) ?>
                         <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $doctoresUser->id], ['confirm' => __('Are you sure you want to delete # {0}?', $doctoresUser->id), 'class'=>'btn btn-danger btn-xs']) ?>
+                      <?php else: ?>
+                        <?php if(isset($membresiaActiva['membresia_id'])): ?>
+                          <?= $this->Html->link(__('Editar'), ['action' => 'edit', $doctoresUser->id], ['class'=>'btn btn-warning btn-xs']) ?>
+                          <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $doctoresUser->id], ['confirm' => __('Are you sure you want to delete # {0}?', $doctoresUser->id), 'class'=>'btn btn-danger btn-xs']) ?>
+                        <?php endif ?>
                       <?php endif ?>
                   </td>
                 </tr>

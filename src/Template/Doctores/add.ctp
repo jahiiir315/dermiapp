@@ -34,12 +34,12 @@
                 echo $this->Form->control('apellido2');
                 echo $this->Form->control('dni');
                 echo $this->Form->control('codigomedico');
-                echo $this->Form->control('users._ids', ['options' => $users]);
+                // echo $this->Form->control('users._ids', ['options' => $users]);
               ?>
             </div>
             <!-- /.box-body -->
 
-          <?php echo $this->Form->submit(__('Submit')); ?>
+          <?php echo $this->Form->submit(__('Guardar')); ?>
 
           <?php echo $this->Form->end(); ?>
         </div>

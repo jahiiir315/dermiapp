@@ -37,7 +37,7 @@ class EmpleadosController extends AppController
      */
     public function index()
     {
-        $empleados = $this->paginate($this->Empleados);
+        $empleados = $this->Empleados->find();
 
         $this->set(compact('empleados'));
     }

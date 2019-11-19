@@ -37,7 +37,7 @@ class DoctoresController extends AppController
      */
     public function index()
     {
-        $doctores = $this->paginate($this->Doctores);
+        $doctores = $this->Doctores->find();
 
         $this->set(compact('doctores'));
     }

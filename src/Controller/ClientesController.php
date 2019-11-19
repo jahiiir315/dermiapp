@@ -26,9 +26,9 @@ class ClientesController extends AppController
     {
         //Listar solos los clientes que coincidan con el usuario logeado
         if($this->Auth->user()['role']==='admin'){
-            $clientes = $this->paginate($this->Clientes->find());
+            $clientes = $this->Clientes->find();
         }else{
-            $clientes = $this->paginate($this->Clientes->find()->where(['user_id' => $this->Auth->user()['id']]));
+            $clientes = $this->Clientes->find()->where(['user_id' => $this->Auth->user()['id']]);
         }
 
         $this->set(compact('clientes'));

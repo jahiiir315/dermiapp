@@ -37,7 +37,7 @@ class DoctoresTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsToMany('Users', [
-            'foreignKey' => 'doctore_id',
+            'foreignKey' => 'doctor_id',
             'targetForeignKey' => 'user_id',
             'joinTable' => 'doctores_users'
         ]);

@@ -31,7 +31,7 @@ class MembresiasController extends AppController
      */
     public function index()
     {
-        $membresias = $this->paginate($this->Membresias);
+        $membresias = $this->Membresias->find();
 
         $this->set(compact('membresias'));
     }

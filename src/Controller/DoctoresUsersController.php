@@ -52,9 +52,9 @@ class DoctoresUsersController extends AppController
         ];
 
         if($this->Auth->user()['role']==='admin'){
-            $doctoresUsers = $this->paginate($this->DoctoresUsers);
+            $doctoresUsers = $this->DoctoresUsers->find();
         }else{
-            $doctoresUsers = $this->paginate($this->DoctoresUsers->find()->where(['user_id'=>$this->Auth->user()['id']]));
+            $doctoresUsers = $this->DoctoresUsers->find()->where(['user_id'=>$this->Auth->user()['id']]);
         }
 
 
@@ -102,7 +102,10 @@ class DoctoresUsersController extends AppController
                 return $doctor->get('label');
             }
         ]);
-        $users = $this->DoctoresUsers->Users->find('list', ['limit' => 200]);
+        $users = $this->DoctoresUsers->Users->find('list',[
+            'keyField' => 'id',
+            'valueField' => 'email'
+        ]);
         $this->set(compact('doctoresUser', 'doctores', 'users'));
     }
 
@@ -134,7 +137,10 @@ class DoctoresUsersController extends AppController
                 return $doctor->get('label');
             }
         ]);
-        $users = $this->DoctoresUsers->Users->find('list', ['limit' => 200]);
+        $users = $this->DoctoresUsers->Users->find('list',[
+            'keyField' => 'id',
+            'valueField' => 'email'
+        ]);
         $this->set(compact('doctoresUser', 'doctores', 'users'));
     }
 

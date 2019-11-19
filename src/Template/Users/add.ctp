@@ -38,41 +38,82 @@
   <?php echo $this->fetch('css'); ?>
 
 </head>
-<body class="hold-transition login-page">
-<div class="col-md-6 col-md-offset-3">
-  <div class="login-logo">
-    <?php if(isset($current_user)): ?>
-      <a><strong>Nuevo usuario</strong></a>
-      <?php else: ?>
-        <a><strong>Registrarse</strong></a>
-    <?php endif ?>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-  <?php echo $this->Form->create($user, ['role' => 'form'],['align'=>"center"]); ?>
-            <div class="box-body">
-              <?php
-                echo $this->Form->control('nombre');
-                echo $this->Form->control('dni');
-                echo $this->Form->control('ruc');
-                echo $this->Form->control('direccion');
-                echo $this->Form->control('celular');
-                echo $this->Form->control('telefono');
-                echo $this->Form->control('email');
-                echo $this->Form->control('password');
-
-              ?>
+<?php if(isset($current_user)): ?>
+  <!-- Main content -->
+  <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title"><?php echo __('Form'); ?></h3>
             </div>
-            <!-- /.box-body -->
+            <!-- /.box-header -->
+            <!-- form start -->
+            <?php echo $this->Form->create($user, ['role' => 'form']); ?>
+              <div class="box-body">
+                <?php
+                  echo $this->Form->control('nombre');
+                  echo $this->Form->control('dni');
+                  echo $this->Form->control('ruc');
+                  echo $this->Form->control('direccion');
+                  echo $this->Form->control('celular');
+                  echo $this->Form->control('telefono');
+                  echo $this->Form->control('email');
+                  echo $this->Form->control('password');
+                ?>
+                <label for="role">Rol</label>
+                <select name="role" class="form-control">
+                  <option value="admin">Adminstrador</option>
+                  <option value="user">Usuario</option>
+                </select>
+              </div>
+              <!-- /.box-body -->
 
-          <?php echo $this->Form->submit(__('Registrar')); ?>
+            <?php echo $this->Form->submit(__('Submit')); ?>
 
-          <?php echo $this->Form->end(); ?>
-    
+            <?php echo $this->Form->end(); ?>
+          </div>
+          <!-- /.box -->
+        </div>
+    </div>
+    <!-- /.row -->
+  </section>
+<?php else: ?>
+  <body class="hold-transition login-page">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="login-logo">
+          <a><strong>Registrarse</strong></a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+    <?php echo $this->Form->create($user, ['role' => 'form'],['align'=>"center"]); ?>
+              <div class="box-body">
+                <?php
+                  echo $this->Form->control('nombre');
+                  echo $this->Form->control('dni');
+                  echo $this->Form->control('ruc');
+                  echo $this->Form->control('direccion');
+                  echo $this->Form->control('celular');
+                  echo $this->Form->control('telefono');
+                  echo $this->Form->control('email');
+                  echo $this->Form->control('password');
+
+                ?>
+              </div>
+              <!-- /.box-body -->
+
+            <?php echo $this->Form->submit(__('Registrar')); ?>
+
+            <?php echo $this->Form->end(); ?>
+      
+    </div>
+    <!-- /.login-box-body -->
   </div>
-  <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
+  <!-- /.login-box -->
+
+  </body>
+<?php endif ?>
 
 <!-- jQuery 3 -->
 <?php echo $this->Html->script('AdminLTE./bower_components/jquery/dist/jquery.min'); ?>
@@ -80,5 +121,4 @@
 <?php echo $this->Html->script('AdminLTE./bower_components/bootstrap/dist/js/bootstrap.min'); ?>
 <!-- iCheck -->
 
-</body>
 </html>

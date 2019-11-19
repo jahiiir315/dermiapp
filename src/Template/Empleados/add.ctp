@@ -34,7 +34,7 @@
                 echo $this->Form->control('apellido2');
                 echo $this->Form->control('celular');
                 echo $this->Form->control('dni');
-                echo $this->Form->control('users._ids', ['options' => $users]);
+                // echo $this->Form->control('users._ids', ['options' => $users]);
               ?>
             </div>
             <!-- /.box-body -->
