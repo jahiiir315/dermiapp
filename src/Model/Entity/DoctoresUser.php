@@ -1,0 +1,35 @@
+<?php
+namespace App\Model\Entity;
+
+use Cake\ORM\Entity;
+
+/**
+ * DoctoresUser Entity
+ *
+ * @property int $id
+ * @property int $doctor_id
+ * @property int|null $user_id
+ * @property string|null $descripcion
+ *
+ * @property \App\Model\Entity\Doctore $doctore
+ * @property \App\Model\Entity\User $user
+ */
+class DoctoresUser extends Entity
+{
+    /**
+     * Fields that can be mass assigned using newEntity() or patchEntity().
+     *
+     * Note that when '*' is set to true, this allows all unspecified fields to
+     * be mass assigned. For security purposes, it is advised to set '*' to false
+     * (or remove it), and explicitly make individual fields accessible as needed.
+     *
+     * @var array
+     */
+    protected $_accessible = [
+        'doctor_id' => true,
+        'user_id' => true,
+        'descripcion' => true,
+        'doctore' => true,
+        'user' => true
+    ];
+}
