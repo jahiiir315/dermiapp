@@ -34,11 +34,7 @@
 
 </head>
 <body class="">
-  <form method="post" accept-charset="utf-8" role="form" action="/dermiapp/users/login">
-    <div style="display:none;">
-      <input type="hidden" name="_method" value="POST">
-      <input type="hidden" name="_csrfToken" autocomplete="off" value="a5e2be8bf597df5bd5bcc61503c71affb6aaef09a466f4b13796acc9ef2fb233e9782aba193606dab7e10b187f6485af769ef8a56435c5a2dd61d1163eee6eb1">
-    </div>
+<?php echo $this->Form->create(); ?>
     <fieldset>
       <!-- <div class="form-group has-feedback">
           <div class="form-group input email">
@@ -114,7 +110,8 @@
    <!-- </div> -->
 
   </fieldset>
-  </form>
+<?php echo $this->Form->end(); ?>
+  
 
 
 

@@ -83,11 +83,7 @@
 <?php else: ?>
   <body class="">
 
-  <form method="post" accept-charset="utf-8" role="form" action="/dermiapp/users/add">
-    <div style="display:none;">
-      <input type="hidden" name="_method" value="POST">
-      <input type="hidden" name="_csrfToken" autocomplete="off" value="a5e2be8bf597df5bd5bcc61503c71affb6aaef09a466f4b13796acc9ef2fb233e9782aba193606dab7e10b187f6485af769ef8a56435c5a2dd61d1163eee6eb1">
-    </div>   
+  <?php echo $this->Form->create($user, ['role' => 'form']); ?> 
     <div class="col-md-offset-1">
 
       <div class="title">Registrarse</div>
@@ -149,7 +145,7 @@
     </div>
   </div>
 </div> 
-</form>
+<?php echo $this->Form->end(); ?>
   </body>
 <?php endif ?>
 
