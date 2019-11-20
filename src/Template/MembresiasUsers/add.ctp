@@ -125,7 +125,7 @@
               </div>
               <!-- /.box-body -->
 
-            <?php echo $this->Form->submit(__('Submit')); ?>
+            <?php echo $this->Form->submit(__('Guardar')); ?>
 
             <?php echo $this->Form->end(); ?>
           <?php endif ?>

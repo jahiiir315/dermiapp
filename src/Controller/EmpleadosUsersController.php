@@ -52,9 +52,9 @@ class EmpleadosUsersController extends AppController
         ];
 
         if($this->Auth->user()['role']==='admin'){
-            $empleadosUsers = $this->EmpleadosUsers->find();
+            $empleadosUsers = $this->EmpleadosUsers->find("all", ['contain' => ['Empleados', 'Users']]);
         }else{
-            $empleadosUsers = $this->EmpleadosUsers->find()->where(['user_id'=>$this->Auth->user()['id']]);
+            $empleadosUsers = $this->EmpleadosUsers->find("all", ['contain' => ['Empleados', 'Users']])->where(['user_id'=>$this->Auth->user()['id']]);
         }
 
         $this->set(compact('empleadosUsers'));

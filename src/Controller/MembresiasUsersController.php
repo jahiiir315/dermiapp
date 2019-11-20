@@ -47,9 +47,9 @@ class MembresiasUsersController extends AppController
 
         $membresiaActiva = '';
         if($this->Auth->user()['role']==='admin'){
-            $membresiasUsers = $this->MembresiasUsers->find();
+            $membresiasUsers = $this->MembresiasUsers->find('all',['contain' => ['Membresias', 'Users']]);
         }else{
-            $membresiasUsers = $this->MembresiasUsers->find()->where(['user_id' => $this->Auth->user()['id']]);
+            $membresiasUsers = $this->MembresiasUsers->find('all',['contain' => ['Membresias', 'Users']])->where(['user_id' => $this->Auth->user()['id']]);
             $membresiasActivas = $this->MembresiasUsers->find()->where(['user_id' => $this->Auth->user()['id']],["estado"=>'activo']);
             foreach($membresiasActivas as $membresia){
                 if($membresia['fecha_inicio']>=$membresia['fecha_fin']){
@@ -98,8 +98,9 @@ class MembresiasUsersController extends AppController
     {
         $membresiasUser = $this->MembresiasUsers->newEntity();
         if ($this->request->is('post')) {
-            if($this->Auth->user['role'] === 'admin'){
+            if($this->Auth->user()['role'] === 'admin'){
                 $membresiasUser = $this->MembresiasUsers->patchEntity($membresiasUser, $this->request->getData());
+                $membresiasUser['estado'] = 'activo';
             }else{
                 $promocion = $this->request->getData()['promocion'];
                 $membresiasUser['membresia_id'] = 2;

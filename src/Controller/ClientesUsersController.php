@@ -55,9 +55,9 @@ class ClientesUsersController extends AppController
             'contain' => ['Users', 'Clientes']
         ];
         if($this->Auth->user()['role']==='admin'){
-            $clientesUsers = $this->ClientesUsers->find();
+            $clientesUsers = $this->ClientesUsers->find("all", ['contain' => ['Users', 'Clientes']]);
         }else{
-            $clientesUsers = $this->ClientesUsers->find()->where(['ClientesUsers.user_id' => $this->Auth->user()['id']]);
+            $clientesUsers = $this->ClientesUsers->find("all", ['contain' => ['Users', 'Clientes']])->where(['ClientesUsers.user_id' => $this->Auth->user()['id']]);
         }
 
         $this->set(compact('clientesUsers'));

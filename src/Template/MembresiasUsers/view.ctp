@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    Membresias User
+    Membresia
     <small><?php echo __('View'); ?></small>
   </h1>
   <ol class="breadcrumb">

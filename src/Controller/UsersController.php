@@ -126,7 +126,7 @@ class UsersController extends AppController
                         'fecha_fin' => new \DateTime('now'),
                         'costo' => floatval(0.0),
                         'estado' => 'activo',
-                        'intentos' => 3
+                        'intentos' => 5
                     ]);
                     $membresiasUserTable->save($membresiaUser);
                     $this->Flash->success(__('Registrado correctamente', 'User'));

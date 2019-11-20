@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Membresias User
+      Membresia
       <small><?php echo __('Edit'); ?></small>
     </h1>
     <ol class="breadcrumb">
@@ -38,7 +38,7 @@
             </div>
             <!-- /.box-body -->
 
-          <?php echo $this->Form->submit(__('Submit')); ?>
+          <?php echo $this->Form->submit(__('Guardar')); ?>
 
           <?php echo $this->Form->end(); ?>
         </div>

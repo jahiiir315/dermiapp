@@ -52,9 +52,9 @@ class DoctoresUsersController extends AppController
         ];
 
         if($this->Auth->user()['role']==='admin'){
-            $doctoresUsers = $this->DoctoresUsers->find();
+            $doctoresUsers = $this->DoctoresUsers->find('all',['contain' => ['Doctores', 'Users']]);
         }else{
-            $doctoresUsers = $this->DoctoresUsers->find()->where(['user_id'=>$this->Auth->user()['id']]);
+            $doctoresUsers = $this->DoctoresUsers->find('all',['contain' => ['Doctores', 'Users']])->where(['user_id'=>$this->Auth->user()['id']]);
         }
 
 

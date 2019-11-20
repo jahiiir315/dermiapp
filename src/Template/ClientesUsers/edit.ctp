@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Clientes User
+      Diagnostico
       <small><?php echo __('Editar'); ?></small>
     </h1>
     <ol class="breadcrumb">

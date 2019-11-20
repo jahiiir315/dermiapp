@@ -125,45 +125,48 @@
           <div class="col-sm-6 ">
             <div class="mt-boxy-color"></div>
             <div class="time-info">
-              <h3>Básico</h3>
+              <h3>Plan basico</h3>
               <ul class="lista-planes">
                 <li>
-                  <p><span class="icon-planes fa fa-heart"></span>5 Consultas al mes</p>
+                  <p><span class="icon-planes fa fa-heart"></span>5 Consultas gratis por registrarte</p>
                 </li>
                 <li>
-                  <p class="texto-tachado"><span class="icon-planes fa fa-heart"></span>Soporte en linea</p>
+                  <p class="texto-tachado"><span class="icon-planes fa fa-heart"></span>Soporte médico</p>
                 </li>
                 <li>
-                  <p class="texto-tachado"><span class="icon-planes fa fa-heart"></span>Historial de consultas</p>
+                  <p class="texto-tachado"><span class="icon-planes fa fa-heart"></span>Soporte web</p>
                 </li>
                 <li>
-                  <p class="texto-tachado"><span class="icon-planes fa fa-heart"></span>Lorem ipsum dolor sit amet consectetur</p>
+                  <p class="texto-tachado"><span class="icon-planes fa fa-heart"></span>Historial de clientes y consultas</p>
                 </li>
               </ul>
               <p>Totalmente Gratis</p>
-              <a href="#" class="medi-info-btn">Comience Ahora</a>
+              <!-- <a href="#" class="medi-info-btn">Comience Ahora</a> -->
+              <?= $this->Html->link(__('Comience ahora'), ['controller'=> 'membresiasUsers', "action" => "add"],['class'=>'medi-info-btn']) ?>
+
             </div>
           </div>
           <div class="col-sm-6 ">
             <div class="mt-boxy-color"></div>
             <div class="time-info">
-              <h3>Empresarial</h3>
+              <h3>Plan premium</h3>
               <ul class="lista-planes">
                 <li>
-                  <p><span class="icon-planes fa fa-heart"></span>500 Consultas al mes</p>
+                  <p><span class="icon-planes fa fa-heart"></span>Consultas ilimitadas</p>
                 </li>
                 <li>
-                  <p><span class="icon-planes fa fa-heart"></span>Soporte en linea</p>
+                  <p><span class="icon-planes fa fa-heart"></span>Asesoria medica</p>
                 </li>
                 <li>
-                  <p><span class="icon-planes fa fa-heart"></span>Historial de consultas</p>
+                  <p><span class="icon-planes fa fa-heart"></span>Asesoria web</p>
                 </li>
                 <li>
-                  <p><span class="icon-planes fa fa-heart"></span>Lorem ipsum dolor sit amet consectetur</p>
+                  <p><span class="icon-planes fa fa-heart"></span>Historial de clientes y consultas</p>
                 </li>
               </ul>
               <p>S./150  Mensuales</p>
-              <a href="#" class="medi-info-btn">Comience Ahora</a>
+              <!-- <a href="#" class="medi-info-btn">Comience Ahora</a> -->
+              <?= $this->Html->link(__('Comience ahora'), ['controller'=> 'membresiasUsers', "action" => "add"],['class'=>'medi-info-btn']) ?>
             </div>
           </div>
           

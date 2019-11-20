@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Doctores User
+      Asesoria médica
       <small><?php echo __('Add'); ?></small>
     </h1>
     <ol class="breadcrumb">
