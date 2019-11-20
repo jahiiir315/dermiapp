@@ -77,7 +77,8 @@
               <button type="submit"><span>Ingresar</span> <i class="fa fa-check"></i></button>
             </div>
             <!-- <a href="" class="pass-forgot">Registrate aqui</a> -->
-            <a href="/dermiapp/users/add" class="pass-forgot">Registrate aquí</a>            
+            <!-- <a href="/dermiapp/users/add" class="pass-forgot">Registrate aquí</a>  -->
+            <?php echo $this->Html->link(__("Registrate aquí"),['controller'=>'users'],['class'=>'pass-forgot']);?>
         </div>
         <!-- <div class="overbox"> -->
       <!-- <div class="material-button alt-2"></div> -->
