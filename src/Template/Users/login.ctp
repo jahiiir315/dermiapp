@@ -61,13 +61,13 @@
             <div class="title">LOGIN</div>
             <?= $this->Flash->render() ?>
             <div class="input">
-              <label for="name">Username</label>
+              <label for="email">Username</label>
               <!-- <input type="text" name="name" id="name"> -->
               <input type="email" name="email" required="required" id="email">
               <span class="spin"></span>
             </div>
             <div class="input">
-              <label for="pass">Password</label>
+              <label for="password">Password</label>
               <!-- <input type="password" name="pass" id="pass"> -->
               <input type="password" name="password" required="required" id="password">
               <span class="spin"></span>
@@ -78,7 +78,7 @@
             </div>
             <!-- <a href="" class="pass-forgot">Registrate aqui</a> -->
             <!-- <a href="/dermiapp/users/add" class="pass-forgot">Registrate aquí</a>  -->
-            <?php echo $this->Html->link(__("Registrate aquí"),['controller'=>'users'],['class'=>'pass-forgot']);?>
+            <?php echo $this->Html->link(__("Registrate aquí"),['controller'=>'users','action'=>'add'],['class'=>'pass-forgot']);?>
         </div>
         <!-- <div class="overbox"> -->
       <!-- <div class="material-button alt-2"></div> -->

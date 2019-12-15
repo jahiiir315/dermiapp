@@ -60,7 +60,13 @@ class ClientesUsersController extends AppController
             $clientesUsers = $this->ClientesUsers->find("all", ['contain' => ['Users', 'Clientes']])->where(['ClientesUsers.user_id' => $this->Auth->user()['id']]);
         }
 
-        $this->set(compact('clientesUsers'));
+        // $this->set(compact('clientesUsers'));
+        $this->set([
+            'clientesUsers' => $clientesUsers,
+            '_serialize' => [
+                'clientesUsers'
+                ]
+            ]);
     }
 
     /**
